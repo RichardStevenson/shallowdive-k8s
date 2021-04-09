@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: nginx
+  name: nginx-ingress
+  namespace: presentation
+spec:
+  rules:
+  - host: presentation-fake.dev.youview.co.uk
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-service
+          servicePort: 80
+        path: /
+
